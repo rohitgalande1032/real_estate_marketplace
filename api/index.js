@@ -13,6 +13,13 @@ mongoose.connect(process.env.MONGO_URI)
 });
 
 const app = express()
+app.get('/', (req, res)=>{
+    res.json({
+        name:"Rohit",
+        email:"rohit@123",
+        city:"pune",
+    })
+})
 
 app.listen(3000, () => {
     console.log("Listen on port number 3000");
