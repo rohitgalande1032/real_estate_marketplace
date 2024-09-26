@@ -1,7 +1,10 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import userRouter from './routes/user.route.js'
 dotenv.config()
+
+const app = express()
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
@@ -12,14 +15,7 @@ mongoose.connect(process.env.MONGO_URI)
     
 });
 
-const app = express()
-app.get('/', (req, res)=>{
-    res.json({
-        name:"Rohit",
-        email:"rohit@123",
-        city:"pune",
-    })
-})
+app.use('/api/user', userRouter)
 
 app.listen(3000, () => {
     console.log("Listen on port number 3000");
