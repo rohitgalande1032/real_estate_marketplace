@@ -38,7 +38,7 @@ export default function Header() {
             <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type='text' placeholder='Search...'
             className='bg-transparent focus:outline-none' />
             <button>
-              <FaSearch className='text-slate-600' />
+              <FaSearch className='text-slate-600 my-sm-4' />
             </button>
         </form>
         <ul className='flex gap-4'>
